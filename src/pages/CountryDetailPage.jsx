@@ -1,5 +1,6 @@
 import { useParams, useNavigate, Link } from "react-router";
 import COUNTRIES from "../data/countries";
+
 const CountryDetailPage = () => {
   const { countryCode } = useParams();
   const navigate = useNavigate();
