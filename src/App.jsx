@@ -6,6 +6,7 @@ import CountriesPage from "./pages/CountriesPage";
 import BucketListPage from "./pages/BucketListPage";
 import AboutPage from "./pages/AboutPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import CountriesLayout from "./components/CountriesLayout";
 
 const App = () => {
   // TODO: replace this with a real route table using react-router.
@@ -13,6 +14,11 @@ const App = () => {
   // page reload (or a 404) because there's no client-side routing yet.
   return (
     <Routes>
+      <Route path="countries" element={<CountriesLayout />}>
+        <Route index element={<CountriesPage />} />
+        <Route path=":countryCode" element={<CountryDetailPage />} />
+      </Route>
+
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route path="countries">
